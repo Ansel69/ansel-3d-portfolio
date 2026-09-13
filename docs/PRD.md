@@ -15,12 +15,11 @@
 ## 1. Executive Summary & Objective
 Website ini adalah portofolio resmi dan showcase digital untuk **Ansel Caprico**, seorang kreator 3D yang baru memulai perjalanannya belajar Blender (3 hari) dengan antusiasme tinggi untuk menciptakan karakter lucu, props manis (*kawaii*), dan maskot bergaya *clay* pastel.
 
-Website ini mengedepankan keterbukaan, keramahan, dan semangat belajar tinggi, memamerkan **5 kreasi aset 3D pertama**:
+Website ini mengedepankan keterbukaan, keramahan, dan semangat belajar tinggi, memamerkan **4 kreasi aset 3D asli**:
 1. 🐱 **Kocheng Oren in Delivery Box** (`Kocheng.blend` / `kocheng_oren.png`)
 2. 🐣 **Chicky Chick in Egg Shell** (`ayam.blend` / `ayam.png`)
 3. 🍦 **Sweet Berry-Choco Ice Cream Pop** (`ESKRIM.blend` / `eskrim.png`)
 4. ☕ **Sleepy Latte Coffee Mug** (`Coffe.blend` / `gelas_coffee.png`)
-5. 🧋 **Sweet Matcha Boba Buddy** (`Boba.blend` / `cute_boba.jpg`)
 
 ### Fitur Unggulan:
 - **Before/After Clay Slider**: Menampilkan perbandingan langsung antara Render Final dan Clay Breakdown otentik dari file Blender.

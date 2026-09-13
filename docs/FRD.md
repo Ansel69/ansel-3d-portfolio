@@ -19,7 +19,7 @@ Frontend Client & Backend Serverless
 ├── JavaScript (ES6+):
 │   ├── Three.js (r128) WebGL: Ambient Particle Background
 │   ├── main.js: Dynamic Gallery Rendering, Modal Handlers, Compare Slider, Async Form Submitter
-│   └── data-projects.js: 5 Cute Artworks Dataset & Learning Journey Progress
+│   └── data-projects.js: 4 Authentic Artworks Dataset & Learning Journey Progress
 ├── Serverless API (Vercel):
 │   └── api/commission.js: POST /api/commission handler with input sanitization & response formatting
 ├── Configuration & Deployment:
@@ -27,7 +27,7 @@ Frontend Client & Backend Serverless
 │   ├── package.json: Project Metadata & Scripts
 │   └── .gitignore: Leak-prevention & Clean Deployment Rules
 └── Assets:
-    ├── Original 3D Renders (kocheng_oren.png, ayam.png, eskrim.png, gelas_coffee.png, cute_boba.jpg)
+    ├── Original 3D Renders (kocheng_oren.png, ayam.png, eskrim.png, gelas_coffee.png)
     ├── Authentic Clay Renders (kocheng_clay.png, ayam_clay.png, eskrim_clay.png, gelas_coffee_clay.png)
     └── Blender Sources (.blend)
 ```
@@ -38,11 +38,11 @@ Frontend Client & Backend Serverless
 
 ### FR-01: Hero Section & Authentic Storytelling
 - Menampilkan narasi jujur dan antusias: Ansel Caprico adalah kreator yang baru 3 hari belajar Blender dan bersemangat mendalami stylized 3D.
-- Counter statistik: `5+` Aset 3D Dibuat, `3` Hari Belajar Blender, `100%` Semangat Belajar.
+- Counter statistik: `4` Aset 3D Asli, `3` Hari Belajar Blender, `100%` Semangat Belajar.
 - CTA ganda ke Showcase dan Trakteer.
 
-### FR-02: 5 Cute Creations Showcase & Before/After Slider
-- Menampilkan 5 karya imut dengan modal detail dan slider perbandingan (Render vs Clay otentik dari Blender).
+### FR-02: 4 Authentic Creations Showcase & Before/After Slider
+- Menampilkan 4 karya imut asli dengan modal detail dan slider perbandingan (Render vs Clay otentik dari Blender).
 
 ### FR-03: Commission Form & Serverless Backend
 - Formulir terhubung secara asinkron ke endpoint `/api/commission.js` dengan pesan toast interaktif dan sanitasi data yang aman.

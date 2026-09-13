@@ -1,4 +1,4 @@
-// Ansel Caprico — Cute & Stylized 3D Portfolio Dataset (5 Cute Creations Edition)
+// Ansel Caprico — Cute & Stylized 3D Portfolio Dataset (4 Authentic Creations)
 const PORTFOLIO_PROJECTS = [
     {
         id: "project-kocheng-oren",
@@ -18,7 +18,7 @@ const PORTFOLIO_PROJECTS = [
         year: "2026",
         description: "Karakter kucing oranye menggemaskan (Kocheng Oren) yang sedang mengintip santai dari dalam kotak kardus paket delivery. Dibuat dengan teknik Subdivision Surface modeling yang sangat halus, ekspresi mata hitam bulat berkilau, pipi tembem, hidung pink kancing, mulut kurva ':3', 6 helai kumis putih, dan cakar mungil 3-jari yang bertengger di tepi kardus.",
         highlights: [
-            "Topologi quad bersih berbasis Sub-D modifier non-destruktif di Blender 4.2",
+            "Topologi quad bersih berbasis Sub-D modifier non-destruktif di Blender",
             "Shader bodi kucing oranye dengan material procedural soft sheen dan subsurface scattering",
             "Kardus lipat trapesium dengan 4 flap terbuka dan sudut tekukan alami",
             "Cakar kucing 3-jari bulat menggemaskan yang bertengger di bibir depan kardus",
@@ -98,31 +98,6 @@ const PORTFOLIO_PROJECTS = [
             "Tatakan coaster kayu warna cokelat tua dengan bevel melingkar yang proporsional",
             "Ekspresi mengantuk lucu: mata garis terpejam, mulut menganga, dan tetesan liur di bibir bawah",
             "Efek 3 huruf 3D 'Z Z Z' melayang diagonal menandakan tidur lelap yang damai"
-        ]
-    },
-    {
-        id: "project-cute-boba",
-        title: "Sweet Matcha Boba Buddy",
-        category: "food",
-        categoryLabel: "Cute Food & Props",
-        renderEngine: "Blender Cycles 4.2",
-        primaryImage: "assets/renders/cute_boba.jpg",
-        clayImage: "assets/renders/cute_boba.jpg",
-        sourceFile: "Boba.blend",
-        tags: ["Blender 4.2", "Boba.blend", "Kawaii Mascot", "Glass & Liquid Shader", "Cycles 4.2"],
-        polycount: "6,200 Tris",
-        vertexCount: "3,300 Verts",
-        textureResolution: "Procedural Milk Tea & Glass Shaders",
-        renderTime: "7 mins @ 512 Samples",
-        client: "Cute Beverage Series",
-        year: "2026",
-        description: "Karakter cup boba milk tea manis menggemaskan dengan sedotan bergaris pink-putih, butiran mutiara boba kenyal melayang, gantungan charm hati kecil, dan ekspresi wajah bahagia dengan pipi merona.",
-        highlights: [
-            "Gelas plastik transparan dengan shader refraction kaca realistis di Blender Cycles",
-            "Cairan milk tea gradasi dengan butiran boba mutiara hitam di bagian bawah",
-            "Sedotan bengkok bermotif candy cane dengan hiasan charm hati pink",
-            "Ekspresi wajah super ceria dengan mata berbinar dan pipi pink merona",
-            "Partikel boba dan kilau bintang melayang untuk kesan dinamis dan magis"
         ]
     }
 ];

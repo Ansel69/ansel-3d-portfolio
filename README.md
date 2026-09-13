@@ -10,7 +10,7 @@ Portofolio digital interaktif resmi untuk **Ansel Caprico**, kreator 3D yang ber
 
 ---
 
-## ✨ 5 Kreasi Aset 3D Utama
+## ✨ 4 Kreasi Aset 3D Utama
 
 | No | Karya 3D | Kategori | File Sumber | Render Final & Clay Breakdown |
 |---|---|---|---|---|
@@ -18,7 +18,6 @@ Portofolio digital interaktif resmi untuk **Ansel Caprico**, kreator 3D yang ber
 | 2 | 🐣 **Chicky Chick in Egg Shell** | `Cute Animal` | `ayam.blend` | Anak ayam kuning bertopi bunga pink (*flower bonnet*) di cangkang telur retak bergerigi |
 | 3 | 🍦 **Sweet Berry-Choco Ice Cream Pop** | `Sweet Food & Prop` | `ESKRIM.blend` | Es krim stik stroberi dengan gigitan cokelat lumer, percikan tetesan (*splash droplets*), dan embun |
 | 4 | ☕ **Sleepy Latte Coffee Mug** | `Sweet Food & Prop` | `Coffe.blend` | Cangkir kopi keramik tidur lelap di tatakan kayu dengan ekspresi berliur dan efek 3D "Z Z Z" melayang |
-| 5 | 🧋 **Sweet Matcha Boba Buddy** | `Sweet Food & Prop` | `Boba.blend` | Karakter boba cup manis dengan sedotan garis pink, butiran mutiara kenyal, dan charm hati |
 
 ---
 
