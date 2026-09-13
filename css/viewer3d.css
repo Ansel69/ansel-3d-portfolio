@@ -1,0 +1,514 @@
+/* ==========================================================================
+   ANSEL CAPRICO — CUTE 3D VIEWER & INSPECTOR STYLES
+   ========================================================================== */
+
+/* ==========================================================================
+   INTERACTIVE 3D TURNTABLE VIEWPORT SECTION
+   ========================================================================== */
+.viewer-section {
+    background: radial-gradient(circle at 50% 30%, rgba(27, 33, 48, 0.45) 0%, rgba(12, 15, 23, 0.95) 100%);
+    border-top: 1px solid var(--bg-glass-border);
+    border-bottom: 1px solid var(--bg-glass-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.viewer-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2rem;
+    align-items: stretch;
+    background: var(--bg-surface);
+    border: 1px solid var(--bg-glass-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+.viewport-container {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    background: radial-gradient(circle at center, #1c2436 0%, #10141f 85%);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+#turntable-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: grab;
+}
+
+#turntable-canvas:active {
+    cursor: grabbing;
+}
+
+.viewport-overlay-hud {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.hud-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(20, 24, 36, 0.88);
+    border: 1px solid var(--bg-glass-border);
+    backdrop-filter: blur(10px);
+    padding: 0.4rem 0.95rem;
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent-pink);
+}
+
+.hud-pill .dot {
+    width: 7px;
+    height: 7px;
+    background: var(--accent-pink);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-pink);
+}
+
+.viewport-hint {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(20, 24, 36, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--bg-glass-border);
+    padding: 0.45rem 1.2rem;
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* Control Panel */
+.viewer-controls-panel {
+    background: var(--bg-surface-elevated);
+    border: 1px solid var(--bg-glass-border);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.panel-group-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+}
+
+.shading-modes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+}
+
+.mode-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.85rem 1.15rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--bg-glass-border);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+    text-align: left;
+}
+
+.mode-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 112, 166, 0.3);
+}
+
+.mode-btn.active {
+    background: rgba(255, 112, 166, 0.15);
+    border-color: var(--accent-pink);
+    color: var(--accent-pink);
+    box-shadow: 0 0 15px rgba(255, 112, 166, 0.2);
+}
+
+.mode-btn .mode-icon {
+    font-size: 1.3rem;
+}
+
+/* 3D Model Option Buttons */
+.model-select-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.model-option-btn {
+    padding: 0.7rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--bg-glass-border);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: 0.86rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+    text-align: left;
+}
+
+.model-option-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.model-option-btn.active {
+    background: rgba(255, 214, 112, 0.15);
+    border-color: var(--accent-yellow);
+    color: #ffffff;
+}
+
+/* Slider Controls */
+.slider-control-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.slider-label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.custom-range {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+}
+
+.custom-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent-pink);
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--accent-pink);
+    transition: transform 0.2s;
+}
+
+.custom-range::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* ==========================================================================
+   PROJECT DETAIL MODAL & INSPECTOR
+   ========================================================================== */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(8, 10, 16, 0.9);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.modal-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-container {
+    background: var(--bg-surface);
+    border: 1px solid var(--bg-glass-border);
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 1100px;
+    max-height: 92vh;
+    overflow-y: auto;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
+    position: relative;
+    transform: scale(0.94) translateY(20px);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-backdrop.open .modal-container {
+    transform: scale(1) translateY(0);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--bg-glass-border);
+    border-radius: 50%;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+    z-index: 10;
+}
+
+.modal-close-btn:hover {
+    color: #fff;
+    background: var(--accent-pink);
+    border-color: var(--accent-pink);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.modal-body-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2.5rem;
+    padding: 2.5rem;
+}
+
+/* Compare Image Slider */
+.compare-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: #171d2b;
+    user-select: none;
+    border: 1px solid var(--bg-glass-border);
+}
+
+.compare-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.compare-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    border-right: 3px solid var(--accent-pink);
+    box-shadow: 2px 0 12px rgba(255, 112, 166, 0.6);
+}
+
+.compare-img-overlay img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+}
+
+.compare-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 38px;
+    height: 38px;
+    background: var(--accent-pink);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--accent-pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #121622;
+    font-size: 1rem;
+    font-weight: 800;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.compare-labels {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 6;
+}
+
+.compare-tag {
+    background: rgba(20, 24, 36, 0.9);
+    border: 1px solid var(--bg-glass-border);
+    backdrop-filter: blur(8px);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-highlight);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+}
+
+/* Modal Specs Table */
+.modal-meta-header {
+    margin-bottom: 1.5rem;
+}
+
+.modal-category-tag {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent-pink);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
+    display: inline-block;
+}
+
+.modal-project-title {
+    font-size: 1.85rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.modal-desc-full {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.specs-table tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.specs-table td {
+    padding: 0.65rem 0;
+    font-size: 0.88rem;
+}
+
+.specs-table td:first-child {
+    font-weight: 700;
+    color: var(--text-muted);
+    width: 40%;
+}
+
+.specs-table td:last-child {
+    color: var(--text-highlight);
+    font-weight: 600;
+}
+
+.highlights-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-highlight);
+    margin-bottom: 0.75rem;
+}
+
+.modal-highlights-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.modal-highlights-list li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    line-height: 1.55;
+}
+
+.modal-highlights-list li::before {
+    content: '🐾';
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   TOAST ALERTS
+   ========================================================================== */
+.toast-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.toast {
+    background: rgba(20, 24, 36, 0.96);
+    border: 1px solid var(--accent-pink);
+    box-shadow: var(--shadow-glow-pink), 0 10px 30px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(16px);
+    padding: 1rem 1.6rem;
+    border-radius: var(--radius-md);
+    color: var(--text-highlight);
+    font-size: 0.92rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    animation: toastIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes toastIn {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 900px) {
+    .viewer-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-body-grid {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+}

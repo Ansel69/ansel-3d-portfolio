@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansel Caprico — Cute 3D Designer & Blender Specialist | Portfolio Showcase</title>
+    <meta name="description" content="Portofolio resmi Ansel Caprico — Cute 3D Designer & Blender Specialist. Showcase karakter 3D imut, props kawaii, dan maskot bergaya clay: Kocheng Oren, Ayam Egg Bonnet, Eskrim Pop, dan Sleepy Coffee Mug.">
+    <meta name="keywords" content="Ansel Caprico, Cute 3D, Blender, Blender 4.2, Kawaii 3D, Stylized 3D, Kocheng Oren, Ayam Egg, Eskrim Pop, Gelas Coffe, 3D Character, Clay Render, Three.js">
+    <meta name="author" content="Ansel Caprico">
+
+    <!-- Open Graph / Meta Sharing -->
+    <meta property="og:title" content="Ansel Caprico — Cute 3D Designer & Blender Specialist">
+    <meta property="og:description" content="Showcase karya 3D imut interaktif, render Blender Cycles, dan turntable 3D real-time.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/renders/kocheng_oren.png">
+
+    <!-- Google Fonts: Syne, Outfit, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/viewer3d.css">
+
+    <!-- Three.js (r128) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+    <!-- Background WebGL 3D Canvas -->
+    <canvas id="hero-canvas"></canvas>
+
+    <!-- Ambient Gradient Overlays -->
+    <div class="ambient-glow glow-top-right"></div>
+    <div class="ambient-glow glow-mid-left"></div>
+    <div class="ambient-glow glow-bottom-right"></div>
+
+    <!-- ==========================================================================
+       NAVIGATION HEADER
+       ========================================================================== -->
+    <header class="site-header">
+        <div class="container nav-wrapper">
+            <a href="#" class="brand-logo" id="brand-logo-link">
+                <div class="logo-badge">
+                    <span>🐾</span>
+                </div>
+                <div class="brand-text">
+                    <span>ANSEL CAPRICO</span>
+                    <span class="brand-subtitle">CUTE 3D DESIGNER</span>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#showcase" class="nav-link">Cute Showcase</a></li>
+                    <li><a href="#pipeline" class="nav-link">Pipeline</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Commission</a></li>
+                    <li><a href="https://teer.id/ansel-caprico-ubqyc" target="_blank" rel="noopener" class="nav-link" style="color: var(--accent-pink); font-weight: 700;">☕ Traktir</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-controls">
+                <button class="btn-icon-control" id="sound-toggle-btn" title="Toggle Cute Sound FX" aria-label="Toggle Sound">🔊</button>
+                <button class="btn-icon-control" id="theme-toggle-btn" title="Switch Pastel Palette" aria-label="Toggle Theme">🎨</button>
+                <a href="#contact" class="btn-primary" style="padding: 0.6rem 1.3rem; font-size: 0.85rem;">Hire Me 💌</a>
+                <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ==========================================================================
+           HERO SECTION
+           ========================================================================== -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <div class="status-pill">
+                            <span class="status-dot"></span>
+                            <span>🐾 AVAILABLE FOR CUTE 3D COMMISSIONS & MASCOTS</span>
+                        </div>
+
+                        <h1 class="hero-title">
+                            Crafting <span class="text-gradient">Adorable, Whimsical</span> & Stylized 3D Worlds.
+                        </h1>
+
+                        <p class="hero-bio">
+                            Halo! Saya <strong>Ansel Caprico</strong>. Saya baru 3 hari belajar 3D modeling di Blender dan sangat antusias mendalami pembuatan karakter imut, props makanan manis, dan maskot bergaya <em>clay</em> pastel. Sudah membuat 5 aset 3D pertama dan terus bersemangat belajar setiap hari! 🐾
+                        </p>
+
+                        <div class="hero-cta-group">
+                            <a href="#showcase" class="btn-primary">
+                                <span>Explore Cute Works 🐣</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                            <a href="https://teer.id/ansel-caprico-ubqyc" target="_blank" rel="noopener" class="btn-secondary">
+                                <span>Traktir Kopi ☕</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                            </a>
+                        </div>
+
+                        <div class="hero-stats-row">
+                            <div class="stat-item">
+                                <div class="stat-number">
+                                    <span class="counter-val" data-target="5">0</span>+
+                                </div>
+                                <div class="stat-label">Aset 3D Dibuat</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">
+                                    <span class="counter-val" data-target="3">0</span> Hari
+                                </div>
+                                <div class="stat-label">Belajar Blender</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">
+                                    <span class="counter-val" data-target="100">0</span>%
+                                </div>
+                                <div class="stat-label">Semangat Belajar</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual">
+                        <div class="hero-visual-card">
+                            <div class="hero-visual-inner">
+                                <img src="assets/renders/kocheng_oren.png" alt="Kocheng Oren in Box by Ansel Caprico" id="hero-main-img">
+                                <div class="hero-badge-overlay">
+                                    <div>
+                                        <div class="hero-badge-title">Kocheng Oren in Box</div>
+                                        <div class="hero-badge-tags">Kocheng.blend • Cycles 4.2 • Sub-D</div>
+                                    </div>
+                                    <span style="font-size: 0.8rem; color: var(--accent-pink); background: rgba(255,112,166,0.15); padding: 0.25rem 0.75rem; border-radius: 999px; font-weight: 700;">FEATURED 🐱</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           SHOWCASE GALLERY SECTION
+           ========================================================================== -->
+        <section id="showcase" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Blender 3D Artworks</span>
+                    <h2 class="section-title">Cute <span class="text-gradient">3D Showcase</span></h2>
+                    <p class="section-subtitle">Koleksi karya asli buatan Ansel Caprico: karakter hewan imut, props makanan kawaii, dan kreasi 3D penuh pesona.</p>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">All Works 🌟</button>
+                    <button class="filter-btn" data-filter="character">Cute Characters 🐾</button>
+                    <button class="filter-btn" data-filter="food">Sweet Food & Props 🍦</button>
+                </div>
+
+                <!-- Dynamic Grid -->
+                <div class="gallery-grid" id="gallery-grid">
+                    <!-- Injected by js/main.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           3D PIPELINE & WORKFLOW SECTION
+           ========================================================================== -->
+        <section id="pipeline" class="section" style="background: rgba(20, 24, 36, 0.35);">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Creative Workflow</span>
+                    <h2 class="section-title">My Cute <span class="text-gradient">3D Pipeline</span></h2>
+                    <p class="section-subtitle">Bagaimana saya mengubah coretan ide sederhana menjadi aset 3D yang menggemaskan dan rapi.</p>
+                </div>
+
+                <div class="pipeline-grid" id="pipeline-grid">
+                    <!-- Injected by js/main.js -->
+                </div>
+
+                <!-- Software Mastery Box -->
+                <div class="software-mastery-box">
+                    <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Software & Tools Stack</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary);">Tools utama yang saya gunakan dalam pengerjaan 3D sehari-hari.</p>
+
+                    <div class="software-grid" id="software-grid">
+                        <!-- Injected by js/main.js -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           ABOUT THE ARTIST SECTION
+           ========================================================================== -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="artist-frame-container">
+                        <div class="artist-portrait-card">
+                            <div class="artist-img-wrapper">
+                                <img src="assets/renders/ayam.png" alt="Chicky Chick by Ansel Caprico">
+                            </div>
+                            <div class="artist-floating-badge">
+                                <span class="artist-badge-icon">🐣</span>
+                                <div class="artist-badge-text">
+                                    <h4>Ansel Caprico</h4>
+                                    <p>Cute 3D Designer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-content">
+                        <span class="section-tag">About The Artist</span>
+                        <h3>Menghadirkan Kebahagiaan Lewat <span class="text-gradient">Desain 3D Imut</span></h3>
+                        
+                        <p class="about-text">
+                            Halo, saya <strong>Ansel Caprico</strong>! Saya baru saja memulai petualangan di dunia 3D modeling dengan Blender 3 hari yang lalu. Walaupun masih di awal perjalanan, rasa cinta dan antusiasme saya terhadap karakter menggemaskan (*kawaii*), props manis, dan visual yang menghangatkan hati membuat saya terus berkreasi dan belajar setiap hari. Sudah ada 5 aset imut yang berhasil saya selesaikan, dan saya sangat bersemangat untuk terus bertumbuh!
+                        </p>
+
+                        <ul class="about-highlights">
+                            <li><i>✓</i> <strong>Semangat Belajar Tinggi:</strong> Terus mengasah teknik Sub-Division modeling dan pencahayaan studio di Blender setiap hari.</li>
+                            <li><i>✓</i> <strong>Eksplorasi Bentuk & Warna Pastel:</strong> Mencoba proporsi bulat yang ramah dan perpaduan warna manis yang memikat mata.</li>
+                            <li><i>✓</i> <strong>Karakter Penuh Kehangatan:</strong> Dibuat dengan keceriaan dan sentuhan ekspresi wajah manis.</li>
+                            <li><i>✓</i> <strong>Terbuka untuk Masukan & Kolaborasi:</strong> Selalu antusias menerima feedback untuk meningkatkan kualitas karya 3D.</li>
+                        </ul>
+
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="#contact" class="btn-primary">Pesan Komisi 💌</a>
+                            <a href="https://teer.id/ansel-caprico-ubqyc" target="_blank" rel="noopener" class="btn-secondary">Dukung di Trakteer ☕</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+           COMMISSION & CONTACT SECTION
+           ========================================================================== -->
+        <section id="contact" class="section" style="background: radial-gradient(circle at 50% 100%, rgba(27, 33, 48, 0.7) 0%, rgba(12, 15, 23, 1) 100%);">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Let's Create Together</span>
+                    <h2 class="section-title">Commission & <span class="text-gradient">Inquiries</span></h2>
+                    <p class="section-subtitle">Butuh maskot brand imut, aset 3D untuk game kasual, atau ilustrasi 3D lucu? Ceritakan ide Anda di sini!</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Contact Info Panel -->
+                    <div class="contact-info-panel">
+                        <div class="contact-card">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Kontak Langsung</h3>
+                            <p style="font-size: 0.92rem; color: var(--text-secondary);">Kirim pesan langsung via email atau media sosial:</p>
+
+                            <div class="contact-method-list">
+                                <a href="mailto:ansel003455@gmail.com" class="contact-method-item">
+                                    <div class="contact-method-icon">💌</div>
+                                    <div>
+                                        <div style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-muted);">EMAIL</div>
+                                        <div style="font-weight: 700; color: #fff;">ansel003455@gmail.com</div>
+                                    </div>
+                                </a>
+
+                                <div class="contact-method-item">
+                                    <div class="contact-method-icon">📍</div>
+                                    <div>
+                                        <div style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-muted);">LOCATION</div>
+                                        <div style="font-weight: 700; color: #fff;">Indonesia (Open Worldwide Remote)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Support / Traktir Kopi Card -->
+                        <div class="contact-card" style="border-color: rgba(255, 112, 166, 0.35); background: linear-gradient(135deg, rgba(255, 112, 166, 0.1) 0%, rgba(20, 24, 36, 0.85) 100%);">
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <h3 style="font-size: 1.15rem; margin: 0;">☕ Traktir & Dukung Karya</h3>
+                                <span style="font-size: 0.75rem; background: var(--accent-pink); color: #fff; padding: 0.2rem 0.6rem; border-radius: 999px; font-weight: 700;">Trakteer</span>
+                            </div>
+                            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1rem;">Suka dengan karakter 3D imut buatan Ansel? Dukung dengan mentraktir es krim atau kopi di Trakteer!</p>
+                            <a href="https://teer.id/ansel-caprico-ubqyc" target="_blank" rel="noopener" class="btn-primary" style="width: 100%; justify-content: center; text-decoration: none; padding: 0.85rem;">
+                                <span>🍰 Traktir di teer.id/ansel-caprico-ubqyc</span>
+                            </a>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Social & Portofolio</h3>
+                            <p style="font-size: 0.88rem; color: var(--text-secondary);">Ikuti update render dan file Blender terbaru:</p>
+
+                            <div class="social-links-grid">
+                                <a href="https://www.instagram.com/3d_npcdaily/" target="_blank" rel="noopener" class="social-btn" style="border-color: rgba(255, 112, 166, 0.3);">
+                                    <span style="font-size: 1.3rem;">📸</span>
+                                    <span>Instagram (@3d_npcdaily)</span>
+                                </a>
+                                <a href="https://teer.id/ansel-caprico-ubqyc" target="_blank" rel="noopener" class="social-btn" style="border-color: rgba(255, 184, 77, 0.3);">
+                                    <span style="font-size: 1.3rem;">☕</span>
+                                    <span>Trakteer (Dukungan)</span>
+                                </a>
+                                <a href="https://artstation.com" target="_blank" rel="noopener" class="social-btn">
+                                    <span style="font-size: 1.3rem;">🎨</span>
+                                    <span>ArtStation</span>
+                                </a>
+                                <a href="https://sketchfab.com" target="_blank" rel="noopener" class="social-btn">
+                                    <span style="font-size: 1.3rem;">📦</span>
+                                    <span>Sketchfab</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Commission Form -->
+                    <div class="commission-form-card">
+                        <form id="commission-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="comm-name">Nama Lengkap *</label>
+                                    <input type="text" id="comm-name" class="form-input" placeholder="e.g. Budi Santoso" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="comm-email">Alamat Email *</label>
+                                    <input type="email" id="comm-email" class="form-input" placeholder="nama@email.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="comm-type">Kategori Proyek Imut</label>
+                                    <select id="comm-type" class="form-select">
+                                        <option value="Cute Mascot / Character">Cute Mascot / Character Design</option>
+                                        <option value="Sweet Food & Props">Sweet Food & Kawaii Props</option>
+                                        <option value="Casual Game Asset Pack">Casual Game 3D Asset Pack</option>
+                                        <option value="3D Icon Set / Illustration">3D App Icon Set / Illustration</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="comm-budget">Estimasi Budget</label>
+                                    <select id="comm-budget" class="form-select">
+                                        <option value="< $150">&lt; $150 / Rp 1.5jt (Single Cute Prop)</option>
+                                        <option value="$150 - $400" selected>$150 - $400 / Rp 2jt - 5jt (Hero Mascot)</option>
+                                        <option value="$400 - $800">$400 - $800 / Rp 5jt - 10jt (Asset Bundle)</option>
+                                        <option value="$800+">$800+ (Full Commercial Series)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="comm-brief">Deskripsi Ide / Brief Proyek *</label>
+                                <textarea id="comm-brief" class="form-textarea" placeholder="Ceritakan konsep Anda: karakter hewan apa yang diinginkan, warna pastel favorit, format file (.blend, .fbx, .png), dan deadline..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 1.1rem;">
+                                <span>Kirim Permintaan Komisi 🐾</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================================================
+       PROJECT DETAIL LIGHTBOX MODAL & INSPECTOR
+       ========================================================================== -->
+    <div id="project-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+        <div class="modal-container">
+            <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Project Modal">&times;</button>
+
+            <div class="modal-body-grid">
+                <!-- Left: Compare Slider -->
+                <div>
+                    <div class="compare-container">
+                        <img id="compare-render-img" class="compare-img" src="" alt="Pastel Render">
+                        <div class="compare-img-overlay">
+                            <img id="compare-clay-img" src="" alt="Clay Breakdown">
+                        </div>
+                        <div class="compare-handle">⇄</div>
+                        <div class="compare-labels">
+                            <span class="compare-tag">CLAY / TOPOLOGY</span>
+                            <span class="compare-tag">BLENDER RENDER</span>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 0.75rem; font-size: 0.78rem; font-weight: 600; color: var(--text-muted);">
+                        Geser slider untuk melihat perbandingan Render vs Clay breakdown
+                    </div>
+                </div>
+
+                <!-- Right: Technical Breakdown -->
+                <div>
+                    <div class="modal-meta-header">
+                        <span class="modal-category-tag" id="modal-cat">Cute Character / Mascot</span>
+                        <h2 class="modal-project-title" id="modal-title">Project Title</h2>
+                        <p class="modal-desc-full" id="modal-desc">Project description...</p>
+                    </div>
+
+                    <table class="specs-table">
+                        <tbody>
+                            <tr>
+                                <td>Polycount</td>
+                                <td id="modal-polycount">6.8k Tris</td>
+                            </tr>
+                            <tr>
+                                <td>Vertex Count</td>
+                                <td id="modal-vertex">3.5k Verts</td>
+                            </tr>
+                            <tr>
+                                <td>Shading & Materials</td>
+                                <td id="modal-textures">Procedural Soft Clay Shaders</td>
+                            </tr>
+                            <tr>
+                                <td>Render Engine</td>
+                                <td id="modal-engine">Blender Cycles 4.2</td>
+                            </tr>
+                            <tr>
+                                <td>Render Time</td>
+                                <td id="modal-rendertime">8 mins @ 512 Samples</td>
+                            </tr>
+                            <tr>
+                                <td>Project Type</td>
+                                <td id="modal-client">Original Mascot Design</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div>
+                        <h4 class="highlights-title">Technical Highlights</h4>
+                        <ul class="modal-highlights-list" id="modal-highlights">
+                            <!-- Injected by js/main.js -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="brand-logo">
+                    <div class="logo-badge">
+                        <span>🐾</span>
+                    </div>
+                    <div class="brand-text">
+                        <span>ANSEL CAPRICO</span>
+                        <span class="brand-subtitle">CUTE 3D DESIGNER</span>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+                    <a href="#hero" class="nav-link">Home</a>
+                    <a href="#showcase" class="nav-link">Showcase</a>
+                    <a href="#pipeline" class="nav-link">Pipeline</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Commission</a>
+                    <a href="https://www.instagram.com/3d_npcdaily/" target="_blank" rel="noopener" class="nav-link">Instagram (@3d_npcdaily)</a>
+                    <a href="https://teer.id/ansel-caprico-ubqyc" target="_blank" rel="noopener" class="nav-link" style="color: var(--accent-pink); font-weight: 700;">Trakteer ☕</a>
+                </div>
+
+                <button class="back-to-top" id="back-to-top-btn">
+                    <span>Back to Top 🐾</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+                </button>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Ansel Caprico. All 3D designs, models & renders are copyrighted by Ansel C.</p>
+                <p class="mono" style="font-size: 0.82rem; color: var(--accent-pink);">
+                    Made with Blender 4.2 • Three.js • 💖
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data-projects.js"></script>
+    <script src="js/three-scene.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

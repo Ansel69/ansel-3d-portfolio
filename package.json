@@ -1,0 +1,22 @@
+{
+  "name": "ansel-caprico-3d-portfolio",
+  "version": "1.0.0",
+  "description": "Ansel Caprico — Cute & Stylized 3D Portfolio Showcase",
+  "main": "index.html",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "3d",
+    "portfolio",
+    "blender",
+    "cute-3d",
+    "ansel-caprico",
+    "stylized-3d"
+  ],
+  "author": "Ansel Caprico <ansel003455@gmail.com>",
+  "license": "MIT"
+}
